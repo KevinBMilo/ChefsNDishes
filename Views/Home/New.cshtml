@@ -1,0 +1,37 @@
+@using ChefNDishes.Models
+@model Chef
+
+<h1>Add a Chef!</h1>
+<a href="/">Home</a>
+
+<form asp-action="hire" method="post" asp-controller="Home">
+    <div class="card-group">
+        <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="FirstName">First Name:</label>
+                <input asp-for="FirstName" type="text" class="form-control">
+                <span class="text-danger" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName">Last Name:</label>
+                <input asp-for="LastName" type="text" class="form-control">
+                <span class="text-danger" asp-validation-for="LastName"></span>
+            </div>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="Dob">Date of Birth:</label>
+                <input asp-for="Dob" type="date" class="form-control">
+                <span class="text-danger" asp-validation-for="Dob"></span>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-secondary m-1">Add Chef</button>
+        </div>
+    </div>
+</form>

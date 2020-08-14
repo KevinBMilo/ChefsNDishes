@@ -1,0 +1,28 @@
+@using ChefNDishes.Models
+@model List<Dish>
+
+<h1><a href="/">Chefs</a>|Dishes</h1>
+<h3>Yum, take a look at our tasty dishes!</h3>
+<a href="dishes/new">Add a Dish</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Chef</th>
+      <th>Tastiness</th>
+      <th>Calories</th>
+    </tr>
+  </thead>
+  <tbody>
+      @{foreach(var g in Model)
+      {
+    <tr>
+      <td>@g.Dishname</td>
+      <td>@g.Creator.FirstName @g.Creator.LastName</td>
+      <td>@g.Tastiness</td>
+      <td>@g.Calories</td>
+    </tr>
+        }
+        }
+  </tbody>
+</table>

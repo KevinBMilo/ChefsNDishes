@@ -1,0 +1,25 @@
+﻿@model List<Chef>
+
+<h1>Chefs|<a href="dishes">Dishes</a></h1>
+<h3>Check out our roster of Chefs!</h3>
+<a href="new">Add a Chef</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th># of Dishes</th>
+    </tr>
+  </thead>
+  <tbody>
+        @{foreach(var h in Model)
+        {
+    <tr>
+      <td>@h.FirstName @h.LastName</td>
+      <td>@h.CalculateAge()</td>
+      <td>@h.CookedDishes.Count()</td>
+    </tr>
+        }
+        }
+  </tbody>
+</table>
